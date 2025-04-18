@@ -12,9 +12,8 @@ class Solution
                 min = Math.min(min, nums[low]);
             }
             else min = Math.min(min, nums[high]);
-            int middle = low + (high-low) /2;
             
-
+            int middle = low + (high-low) /2;
             
             if( nums[low] < nums[middle] )
             {
