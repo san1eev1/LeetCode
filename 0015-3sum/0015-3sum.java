@@ -7,20 +7,29 @@ class Solution
 
         for(int i=0; i<nums.length-2; i++)
         {
-            if (i > 0 && nums[i] == nums[i - 1]) continue; 
-            Set<Integer> temp = new HashSet<>();
-
-            for (int j = i + 1; j < nums.length; j++) 
+            if (i > 0 && nums[i] == nums[i - 1]) 
             {
-                
-                int target = -nums[i] - nums[j]; 
-                if (temp.contains(target)) 
+                continue; 
+            }
+
+            int left = i + 1, right = nums.length - 1;
+            while (left < right) 
+            {
+                int sum = nums[i] + nums[left] + nums[right];
+                if (sum == 0) 
                 {
-                    solution.add(Arrays.asList(nums[i], nums[j], target));
-                    while (j + 1 < nums.length && nums[j] == nums[j + 1]) 
-                        j++;
+                    solution.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    while (left < right && nums[left] == nums[left + 1]) 
+                    {   left++; }
+                    while (left < right && nums[right] == nums[right - 1])
+                    {   right--;    }
+                    left++;
+                    right--;
+                } else if (sum < 0) {
+                    left++;
+                } else {
+                    right--;
                 }
-                temp.add(nums[j]);
             }
         }
         return solution;
