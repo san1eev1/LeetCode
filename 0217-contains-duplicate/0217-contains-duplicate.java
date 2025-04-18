@@ -7,9 +7,7 @@ class Solution
         {
             int value=nums[i];
             if(map.contains(value))
-            {
                 return true;
-            }
             else
                 map.add(nums[i]);
         }
