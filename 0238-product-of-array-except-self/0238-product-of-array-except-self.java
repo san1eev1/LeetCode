@@ -2,16 +2,16 @@ class Solution {
     public int[] productExceptSelf(int[] nums) 
     {
         int answer[] = new int[nums.length];
-        int loop1=1 , loop2=1;
+        int larray=1 , rarray=1;
         for(int i = 0; i < nums.length; i++)
         {
-            answer[i] = loop1;
-            loop1 = nums[i] * loop1;
+            answer[i] = larray;
+            larray = nums[i] * larray;
         }
         for(int i = nums.length - 1; i >= 0; i--)
         {
-            answer[i] = answer[i]*loop2;
-            loop2 = nums[i] * loop2;
+            answer[i] = answer[i]*rarray;
+            rarray = nums[i] * rarray;
         }
         return answer;
     }
