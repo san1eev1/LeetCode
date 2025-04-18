@@ -4,16 +4,15 @@ class Solution
     {
         int low = 0;
         int high = nums.length-1;
-        int result = -1;
         while(low <= high)
         {
             int middle = low + (high - low)/2;
             if(nums[middle] == target) 
-            {   result = middle; return result; }
+            {   return middle; }
             else if(nums[low] == target) 
-            {   result = low; return result; }
+            {   return low; }
             else if(nums[high] == target) 
-            {   result = high; return result; }
+            {   return high; }
             
 
             if(nums[low] <= nums[middle])
@@ -35,6 +34,6 @@ class Solution
                     low = middle + 1;
             }
         } 
-    return result;
+    return -1;
     }
 }
