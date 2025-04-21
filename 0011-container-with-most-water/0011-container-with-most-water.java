@@ -7,14 +7,15 @@ class Solution
         int r = height.length-1;
         while(l < r)
         {   
+            int w = r - l;
             if(height[l] < height[r])
             {
-                max = Math.max( max, height[l] * (r - l));
+                max = Math.max( max, height[l] * w);
                 l++;
             }
             else
             {
-                max = Math.max( max, height[r] * (r - l));
+                max = Math.max( max, height[r] * w);
                 r--; 
             }
         }
