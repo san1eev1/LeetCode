@@ -9,20 +9,17 @@ class Solution
         
         while(left < right)
         {   
-            if(height[left] < height[right])
-            {
-                max = Math.max( max, height[left] * width);
+            int min = Math.min( height[left], height[right]);
+            max = Math.max( max, min * width);
+
+            
+            if(height[left] <= height[right])
+            {   
                 left++;
             }
-            else if(height[left] > height[right])
-            {
-                max = Math.max( max, height[right] * width);
+            else if(height[left] >= height[right])
+            {   
                 right--; 
-            }
-            else
-            {
-                max = Math.max( max, height[left] * width);
-                left++;
             }
             width--;
         }
