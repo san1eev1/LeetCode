@@ -11,15 +11,18 @@ class Solution
         {   
             int min = Math.min( height[left], height[right]);
             max = Math.max( max, min * width);
-
             
-            if(height[left] <= height[right])
-            {   
+            if(height[left] < height[right])
+            {
                 left++;
             }
-            else if(height[left] >= height[right])
-            {   
+            else if(height[left] > height[right])
+            {
                 right--; 
+            }
+            else
+            {
+                left++;
             }
             width--;
         }
