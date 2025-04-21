@@ -5,21 +5,18 @@ class Solution
         int max = 0;
         int l = 0; 
         int r = height.length-1;
-        int width= r - l;
-        
         while(l < r)
         {   
             if(height[l] < height[r])
             {
-                max = Math.max( max, height[l] * width);
+                max = Math.max( max, height[l] * (r - l));
                 l++;
             }
             else
             {
-                max = Math.max( max, height[r] * width);
+                max = Math.max( max, height[r] * (r - l));
                 r--; 
             }
-            width--;
         }
         System.gc();
         return max;
