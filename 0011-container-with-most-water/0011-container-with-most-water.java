@@ -3,21 +3,21 @@ class Solution
     public int maxArea(int[] height) 
     {
         int max = 0;
-        int l = 0; 
-        int r = height.length-1;
-        int width= r - l;
+        int left = 0; 
+        int right = height.length-1;
+        int width= right - left;
         
-        while(l < r)
+        while(left < right)
         {   
-            if(height[l] < height[r])
+            if(height[left] < height[right])
             {
-                max = Math.max( max, height[l] * width);
-                l++;
+                max = Math.max( max, height[left] * width);
+                left++;
             }
             else
             {
-                max = Math.max( max, height[r] * width);
-                r--; 
+                max = Math.max( max, height[right] * width);
+                right--; 
             }
             width--;
         }
