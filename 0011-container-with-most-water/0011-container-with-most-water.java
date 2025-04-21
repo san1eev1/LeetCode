@@ -3,24 +3,25 @@ class Solution
     public int maxArea(int[] height) 
     {
         int max = 0;
-        int left = 0; 
-        int right = height.length-1;
-        int width= right - left;
+        int l = 0; 
+        int r = height.length-1;
+        int width= r - l;
         
-        while(left < right)
+        while(l < r)
         {   
-            if(height[left] < height[right])
+            if(height[l] < height[r])
             {
-                max = Math.max( max, height[left] * width);
-                left++;
+                max = Math.max( max, height[l] * width);
+                l++;
             }
             else
             {
-                max = Math.max( max, height[right] * width);
-                right--; 
+                max = Math.max( max, height[r] * width);
+                r--; 
             }
             width--;
         }
+        System.gc();
         return max;
     }
 }
