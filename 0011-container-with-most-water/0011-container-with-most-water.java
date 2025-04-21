@@ -18,7 +18,7 @@ class Solution
                 r--; 
             }
         }
-        System.gc();
+        //System.gc();
         return max;
     }
 }
