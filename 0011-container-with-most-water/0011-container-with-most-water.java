@@ -14,15 +14,10 @@ class Solution
                 max = Math.max( max, height[left] * width);
                 left++;
             }
-            else if(height[left] > height[right])
+            else
             {
                 max = Math.max( max, height[right] * width);
                 right--; 
-            }
-            else
-            {
-                max = Math.max( max, height[left] * width);
-                left++;
             }
             width--;
         }
