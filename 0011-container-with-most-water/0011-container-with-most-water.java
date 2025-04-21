@@ -9,19 +9,19 @@ class Solution
         
         while(left < right)
         {   
-            int min = Math.min( height[left], height[right]);
-            max = Math.max( max, min * width);
-            
             if(height[left] < height[right])
             {
+                max = Math.max( max, height[left] * width);
                 left++;
             }
             else if(height[left] > height[right])
             {
+                max = Math.max( max, height[right] * width);
                 right--; 
             }
             else
             {
+                max = Math.max( max, height[left] * width);
                 left++;
             }
             width--;
